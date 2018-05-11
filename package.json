@@ -1,0 +1,19 @@
+{
+  "name": "backdb",
+  "version": "1.0.0",
+  "description": "Module DB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hackchan/backdb.git"
+  },
+  "author": "hackchan <fabiorojas7@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hackchan/backdb/issues"
+  },
+  "homepage": "https://github.com/hackchan/backdb#readme"
+}
