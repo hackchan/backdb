@@ -4,7 +4,7 @@
   "description": "Module DB",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "standard"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/hackchan/backdb/issues"
   },
-  "homepage": "https://github.com/hackchan/backdb#readme"
+  "homepage": "https://github.com/hackchan/backdb#readme",
+  "devDependencies": {
+    "standard": "^11.0.1"
+  }
 }
