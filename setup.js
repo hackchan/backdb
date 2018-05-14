@@ -1,17 +1,20 @@
 'use strict'
-const debug = require('debug')('backdb:db:setup')
+const config = require('./lib/config')
+const inquirer = require('inquirer')
+const chalk = require('chalk')
 const db = require('./')
 
+const prompt = inquirer.createPromptModule()
+console.log('config>>', config)
 async function setup () {
-  const config = {
-    database: process.env.DB_NAME || 'playgames',
-    username: process.env.DB_USER || 'hackchan',
-    password: process.env.DB_PASS || 'hackchan',
-    host: process.env.DB_HOST || '192.168.18.80',
-    dialect: 'postgres',
-    operatorsAliases: false,
-    logging: s => debug(s),
-    setup: true
+  const answer = await prompt([{
+    type: 'confirm',
+    name: 'setup',
+    message: 'this will destroy your DATABASE, are you sure?'
+  }])
+
+  if (!answer.setup) {
+    return console.log('Nothing happend :)')
   }
 
   await db(config).catch(handleFatalError)
@@ -20,7 +23,7 @@ async function setup () {
 }
 
 function handleFatalError (err) {
-  console.error(err.message)
+  console.error(`${chalk.red('[Fatal error]')} ${err.message}`)
   console.error(err.stack)
 }
 

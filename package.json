@@ -4,7 +4,8 @@
   "description": "Module DB",
   "main": "index.js",
   "scripts": {
-    "setup":"DEBUG=backdb:* node setup.js",
+    "setup": "DEBUG=backdb:* node setup.js",
+    "example": "DEBUG=backdb:* node examples/index.js",
     "lint": "standard"
   },
   "repository": {
@@ -21,7 +22,9 @@
     "standard": "^11.0.1"
   },
   "dependencies": {
+    "chalk": "^2.4.1",
     "debug": "^3.1.0",
+    "inquirer": "^5.2.0",
     "pg": "^7.4.3",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.37.7"
